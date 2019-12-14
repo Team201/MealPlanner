@@ -39,7 +39,7 @@ class MainPanel extends Component {
 
 function mapStateToProps(state) {
     return {
-        notificationStatus: vkSelectors.getNotificationStatus(state),
+        notificationStatus: "", //vkSelectors.getNotificationStatus(state),
     };
 }
 

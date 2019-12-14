@@ -2,13 +2,14 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import { ConfigProvider, Root, View } from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
-import {isWebView} from '@vkontakte/vkui/src/lib/webview';
 import * as vkSelectors from '../store/vk/reducer';
 import * as vkActions from '../store/vk/actions';
 import AboutPanel from './AboutPanel';
 import MainPanel from './MainPanel';
 import { RouteNode } from 'react-router5'
+import VKConnect from '@vkontakte/vk-connect'
 
+const isWebView = VKConnect.isWebView();
 
 class App extends Component {
 
@@ -34,8 +35,8 @@ class App extends Component {
 
 function mapStateToProps(state) {
 	return {
-        accessToken: vkSelectors.getAccessToken(state),
-        insets: vkSelectors.getInsets(state),
+        accessToken: "", //vkSelectors.getAccessToken(state),
+        insets: "", // vkSelectors.getInsets(state),
     };
 }
 
